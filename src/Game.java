@@ -47,9 +47,13 @@ public class Game {
     }
     public void calculatePercentages () {
         double result = .8;
-        for (int length = end - 1; length <= end - 1; length++) {
-            result *= .8;
+        if (end <= 3) {
+            for (int length = end - 1; length <= end - 1; length++) {
+                result *= .8;
+            }
+            System.out.println("The chance of you losing here was " + result + ".");
+        } else if (end <= 6) {
+            result
         }
-
     }
 }
