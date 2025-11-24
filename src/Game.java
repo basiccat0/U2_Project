@@ -1,7 +1,12 @@
 import java.util.Scanner;
+
+import static java.lang.Math.random;
+
 public class Game {
     public static int end = 0;
     int loop = 9;
+
+
     public void cardGame() {
         System.out.println("__________ Pick a number from range of two numbers. Be careful though as if you choose the wrong number, you lose! __________");
         Scanner scan = new Scanner(System.in);
@@ -12,7 +17,6 @@ public class Game {
                 int chosenNum = scan.nextInt();
                 if (chosenNum != randomNum && (chosenNum == 1 || chosenNum == 2 || chosenNum == 3 || chosenNum == 4 || chosenNum == 5)) {
                     System.out.println("Again!");
-                    System.out.println(randomNum);
                 } else {
                     System.out.println("You chose the wrong number! Game Over :(");
                     System.exit(0);
@@ -52,12 +56,12 @@ public class Game {
                 }
                 loop --;
             }
-            end = loop;
+            end = loop-1;
         }
     }
     public void calculatePercentages () {
-        double result = .8;
-        for (int length = 0; length <= end - 1; length ++) {
+        double result = .2;
+        for (int length = 0; length < end - 1; length ++) {
             if (length == 1 || length == 2) {
                 result *= .8;
             } else if (length == 3 || length == 4 || length == 5) {
@@ -67,7 +71,10 @@ public class Game {
             } else if (length == 8) {
                 result *= .5;
             }
+        if (length == end) {
+            result *= .2;
         }
+    }
         System.out.println("It was a " + result + "chance you lost!");
     }
 }
