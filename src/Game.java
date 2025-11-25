@@ -8,39 +8,44 @@ public class Game {
 
 
     public void cardGame() {
-        System.out.println("__________ Pick a number from range of two numbers. Be careful though as if you choose the wrong number, you lose! __________");
+        System.out.println("You just entered into a casino with all the money to your name! A single crisp hundred dollar bill...");
+        System.out.println("Not to worry though as the manager has offered you a once in a lifetime deal! For every round you win in this luck based game, he'll tack on a zero at the end onto that 100 dollars, letting you win up to a million dollars!");
+        System.out.println("Just don't choose the same number as the randomizer! How much will you win?");
         Scanner scan = new Scanner(System.in);
         while (loop > 0) {
             if (loop == 9 || loop == 8 || loop == 7) {
-                int randomNum = (int) (Math.random() * 4);
-                System.out.println("Choose a number between 1 and 5");
+                int randomNum = (int) (Math.random() * 5) + 1;
+                System.out.println("Alright now choose a number between 1 and 5");
                 int chosenNum = scan.nextInt();
                 if (chosenNum != randomNum && (chosenNum == 1 || chosenNum == 2 || chosenNum == 3 || chosenNum == 4 || chosenNum == 5)) {
                     System.out.println("Again!");
                 } else {
                     System.out.println("You chose the wrong number! Game Over :(");
+                    System.out.println("You won absolutely nothing...");
                     System.exit(0);
                 }
                 loop --;
             } else if (loop == 6 || loop == 5 || loop == 4) {
-                int randomNum = (int) (Math.random() * 3);
+                int randomNum = (int) (Math.random() * 4) + 1;
                 System.out.println("Now choose a number between 1 and 4");
                 int chosenNum = scan.nextInt();
                 if (chosenNum != randomNum && (chosenNum == 1 || chosenNum == 2 || chosenNum == 3 || chosenNum == 4)) {
                     System.out.println("Again!");
                 } else {
                     System.out.println("You chose the wrong number! Game Over :(");
+                    System.out.println("You won absolutely nothing...");
                     System.exit(0);
                 }
                 loop --;
             } else if (loop == 3 || loop == 2) {
-                int randomNum = (int) (Math.random() * 2) + 1;
+                int randomNum = (int) (Math.random() * 3) + 1;
                 System.out.println("Choose a number between 1 and 3");
                 int chosenNum = scan.nextInt();
                 if (chosenNum != randomNum && (chosenNum == 1 || chosenNum == 2 || chosenNum == 3)) {
                     System.out.println("Again!");
                 } else {
                     System.out.println("You chose the wrong number! Game Over :(");
+                    System.out.println("You were so close...");
                     System.exit(0);
                 }
                 loop --;
@@ -52,6 +57,7 @@ public class Game {
                     System.out.println("Again!");
                 } else {
                     System.out.println("You chose the wrong number! Game Over :(");
+                    System.out.println("Right on the last one...");
                     System.exit(0);
                 }
                 loop --;
@@ -71,10 +77,10 @@ public class Game {
             } else if (length == 8) {
                 result *= .5;
             }
-        if (length == end) {
-            result *= .2;
+            if (length == end) {
+                result *= .2;
+            }
         }
-    }
         System.out.println("It was a " + result + "chance you lost!");
     }
 }
